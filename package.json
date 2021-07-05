@@ -1,0 +1,34 @@
+{
+  "name": "game-of-thrones-api",
+  "version": "1.0.0",
+  "description": "Game of Trones API to manage the houses of Westeros",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siilas/game-of-thrones-api.git"
+  },
+  "keywords": [
+    "game of thrones",
+    "api"
+  ],
+  "author": "siilas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siilas/game-of-thrones-api/issues"
+  },
+  "homepage": "https://github.com/siilas/game-of-thrones-api#readme",
+  "dependencies": {
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "pino": "^6.11.3",
+    "pino-pretty": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}

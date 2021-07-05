@@ -1,0 +1,40 @@
+version: '2.1'
+
+services:
+    app:
+        container_name: game-of-thrones-api
+        build: '.'
+        depends_on: 
+            mysql:
+                condition: service_healthy
+        ports: 
+            - '8080:8080'
+        networks:
+            - app-connect
+
+    mysql:
+        container_name: mysql
+        image: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+            MYSQL_DATABASE: game-of-thrones-db
+            MYSQL_USER: game-of-thrones-user
+            MYSQL_PASSWORD: game-of-thrones-pass
+            MYSQL_ROOT_PASSWORD: root
+        healthcheck:
+            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+            interval: 15s
+            timeout: 10s
+            retries: 5   
+        volumes:
+            - './scripts/db.sql:/docker-entrypoint-initdb.d/init.sql'
+            - '/tmp/mysql-data:/var/lib/mysql'
+        ports:
+            - '3306:3306'
+        networks:
+            - app-connect
+
+networks:
+    app-connect:
+        driver: bridge
