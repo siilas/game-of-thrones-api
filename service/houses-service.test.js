@@ -128,3 +128,13 @@ test('should validate foundedIn before create', () => {
         expect(e).toEqual(new TypeError('Field foundedIn is required.'));
     });
 });
+
+test('should throw error when id is invalid on delete', () => {
+    expect.assertions(1);
+
+    const invalidId = 1;
+    
+    service.deleteHouse(invalidId).catch(e => {
+        expect(e).toEqual(new TypeError('House with id 1 not found'));
+    });
+});

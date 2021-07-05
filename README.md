@@ -46,3 +46,10 @@ POST /lords
     "appearsOn: "TV Series Seasons Where The Lord Appears"
 }
 ```
+
+## Future Improvements
+
+1. Add more tests and fix mocks;
+1. Write better docs (README, CONTRIBUTING, CHANGELOG);
+1. Create a POSTMAN collection for tests;
+1. Remove hardcoded configurations;

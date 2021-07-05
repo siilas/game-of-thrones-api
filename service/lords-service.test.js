@@ -49,3 +49,13 @@ test('should validate appearsOn before create', () => {
         expect(e).toEqual(new TypeError('Field appearsOn is required.'));
     });
 });
+
+test('should throw error when id is invalid on delete', () => {
+    expect.assertions(1);
+
+    const invalidId = 1;
+    
+    service.deleteLord(invalidId).catch(e => {
+        expect(e).toEqual(new TypeError('Lord with id 1 not found'));
+    });
+});
