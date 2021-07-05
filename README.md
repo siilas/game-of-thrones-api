@@ -53,3 +53,4 @@ POST /lords
 1. Write better docs (README, CONTRIBUTING, CHANGELOG);
 1. Create a POSTMAN collection for tests;
 1. Remove hardcoded configurations;
+1. A lot of stuffs :/
